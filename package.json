@@ -1,0 +1,16 @@
+{
+  "name": "codra-mvp",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "check": "node --check app.js",
+    "test": "playwright test",
+    "screenshots": "playwright test tests/screenshots.spec.js",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
