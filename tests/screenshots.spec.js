@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test('capture README screenshots', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => localStorage.clear());
   await page.reload();

@@ -10,7 +10,7 @@ const viewports = [
 
 async function openFresh(page, viewport) {
   await page.setViewportSize(viewport);
-  await page.goto('/');
+  await page.goto('./');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
   const close = page.locator('.modal-backdrop .modal-close');

@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 async function openFresh(page) {
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.locator('#app')).toBeVisible();
   const close = page.locator('.modal-backdrop .modal-close').first();
   if (await close.isVisible().catch(() => false)) await close.click();
@@ -16,7 +16,7 @@ async function startDemo(page) {
 
 test.describe('Codra primary user journeys', () => {
   test('A: first visit shows a clear welcome path', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await page.evaluate(() => localStorage.clear());
     await page.reload();
     await expect(page.locator('.welcome-card')).toBeVisible();

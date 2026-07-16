@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 async function openClean(page, profile = {}) {
-  await page.goto('/');
+  await page.goto('./');
   await page.evaluate(profileData => {
     localStorage.clear();
     if (profileData) localStorage.setItem('codra_profile', JSON.stringify({
