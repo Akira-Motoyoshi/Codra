@@ -130,6 +130,7 @@ npx playwright test
 - E：面接回答メモ保存と `codra_interview_answers` 保存
 - F：データ管理、エクスポート、Supabase移行プレビュー
 - G：確認モーダル付きデモデータ削除
+- モバイル操作：390 / 412 / 768 / 1024 / 1440pxでメニュー、プロフィール、通知、オーバーレイを確認
 
 初回セットアップからの実行例：
 
@@ -146,6 +147,14 @@ npm run screenshots
 ```
 
 失敗時は、ポート4173の競合、Chromiumのインストール、localStorageの状態、確認モーダルの表示を確認してください。失敗時のスクリーンショット、trace、videoはPlaywrightの設定により保持されます。
+
+公開URLを同じテストで確認する場合は、ローカルサーバーを起動せずに次を実行します。
+
+```bash
+CODRA_BASE_URL=https://akira-motoyoshi.github.io/Codra/ npx playwright test tests/mobile-controls.spec.js
+```
+
+モバイルメニューはスマートフォンとiPad縦幅では開閉ボタン、オーバーレイ、Escape、項目選択で閉じられます。iPad横幅とデスクトップでは既存のサイドナビゲーションを表示します。通知はヘッダーから開き、外側クリックまたはEscapeで閉じます。
 
 ## データ保存
 
@@ -231,6 +240,7 @@ Codra/
 ├── playwright.config.js    # E2E設定とHTTPサーバー
 ├── tests/codra.spec.js     # 主要導線のE2E
 ├── tests/recruitment.spec.js # プロフィール、メニュー、募集情報E2E
+├── tests/mobile-controls.spec.js # モバイル、プロフィール、通知、エラー監視E2E
 ├── tests/screenshots.spec.js # README用スクリーンショット生成
 ├── screenshots/            # README用画面例
 ├── RELEASE_CHECKLIST.md    # 配布前チェックリスト

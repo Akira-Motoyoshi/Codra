@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 async function openFresh(page) {
   await page.goto('/');
-  await page.waitForLoadState('networkidle');
+  await expect(page.locator('#app')).toBeVisible();
   const close = page.locator('.modal-backdrop .modal-close').first();
   if (await close.isVisible().catch(() => false)) await close.click();
 }

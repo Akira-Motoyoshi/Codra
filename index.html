@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0d1f3c" />
+  <meta name="codra-version" content="0.2.0-mobile-controls" />
   <title>Codra — Career Strategy Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,19 +32,19 @@
       </nav>
       <div class="sidebar-bottom">
         <div class="sidebar-note"><span class="status-dot"></span><div><strong>情報をアップデート</strong><small>週1回の見直しがおすすめ</small></div></div>
-        <div class="user-mini"><span class="avatar">YU</span><div><strong>ゆうき</strong><small>プロフィール 72%</small></div><span>•••</span></div>
+        <button class="user-mini" data-view="profile" aria-label="プロフィールを開く" type="button"><span class="avatar" id="user-mini-avatar">GU</span><div><strong id="user-display-name">ゲスト</strong><small id="user-profile-completion">プロフィール 未作成</small></div><span aria-hidden="true">•••</span></button>
       </div>
     </aside>
     <main class="main-content">
-      <header class="topbar"><button class="mobile-menu" data-testid="mobile-menu" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-sidebar">☰</button><div class="breadcrumb">2026卒 / Career OS</div><div class="top-actions"><button class="icon-btn" aria-label="通知">♧<i></i></button><button class="avatar top-avatar" data-view="profile" aria-label="プロフィールを開く">YU</button></div></header>
+      <header class="topbar"><button class="mobile-menu" data-testid="mobile-menu" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-sidebar" type="button">☰</button><div class="breadcrumb">2026卒 / Career OS</div><div class="top-actions"><button class="icon-btn notification-toggle" data-testid="notification-toggle" aria-label="通知を開く" aria-expanded="false" aria-controls="notification-panel" type="button">♧<i></i></button><div id="notification-panel" class="notification-panel" role="dialog" aria-labelledby="notification-title" hidden><strong id="notification-title">通知</strong><p>新しい通知はありません</p></div><button class="avatar top-avatar" data-view="profile" aria-label="プロフィールを開く" type="button">GU</button></div></header>
       <div id="app" class="page-wrap"></div>
     </main>
   </div>
   <div class="sidebar-overlay" id="sidebar-overlay" data-testid="sidebar-overlay" aria-hidden="true"></div>
   <div id="toast" class="toast" role="status"></div>
-  <script src="app.js"></script>
-  <script src="recruitment.js"></script>
-  <script src="navigation.js"></script>
-  <script src="runtime-hooks.js"></script>
+  <script src="app.js?v=20260716-mobile2"></script>
+  <script src="recruitment.js?v=20260716-mobile2"></script>
+  <script src="navigation.js?v=20260716-mobile2"></script>
+  <script src="runtime-hooks.js?v=20260716-mobile2"></script>
 </body>
 </html>

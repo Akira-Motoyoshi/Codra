@@ -8,13 +8,13 @@ module.exports = defineConfig({
   fullyParallel: false,
   reporter: process.env.CI ? [['line'], ['html', { open: 'never' }]] : 'list',
   use: {
-    baseURL: 'http://127.0.0.1:4173',
+    baseURL: process.env.CODRA_BASE_URL || 'http://127.0.0.1:4173',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     ...devices['Desktop Chrome']
   },
-  webServer: {
+  webServer: process.env.CODRA_BASE_URL ? undefined : {
     command: 'python3 -m http.server 4173',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: true,
